@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Aqsha! 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', sans-serif;
+      text-align: center;
+      background: url('bday.jpg') no-repeat center center/cover;
+      color: white;
+      overflow: hidden;
+    }
+
+    .gateway {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px 40px;
+      border-radius: 15px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .gateway h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .gateway p {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .gateway button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      color: white;
+      background: #ff6f61;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .gateway button:hover {
+      background: #ff9f91;
+    }
+
+    .main-content {
+      display: none;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .main-content h1 {
+      font-size: 3rem;
+      margin-top: 15vh;
+      text-shadow: 2px 2px 5px black;
+      animation: zoomIn 2s ease-in-out;
+    }
+
+    .main-content p {
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+
+    .cake {
+      margin: 30px auto;
+      width: 200px;
+      height: 300px;
+      background: pink;
+      border-radius: 15px 15px 0 0;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      animation: bounce 2s infinite ease-in-out;
+    }
+
+    .cake::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 50px;
+      background: yellow;
+      border-radius: 5px;
+      animation: flame 1s infinite;
+    }
+
+    .cake::after {
+      content: "🎂";
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 3rem;
+    }
+
+    .music-control {
+      margin-top: 30px;
+    }
+
+    .music-control button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: #ff6f61;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .music-control button:hover {
+      background: #ff9f91;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes flame {
+      0%, 100% {
+        height: 50px;
+        background: orange;
+      }
+      50% {
+        height: 60px;
+        background: yellow;
+      }
+    }
+  </style>
+  <script>
+    function enterSite() {
+      document.querySelector('.gateway').style.display = 'none';
+      document.querySelector('.main-content').style.display = 'block';
+    }
+
+    function toggleMusic() {
+      const music = document.getElementById('birthdaySong');
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- Background Music -->
+  <audio id="birthdaySong" autoplay loop>
+    <source src="happy-birthday-song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Gateway -->
+  <div class="gateway">
+    <h1>Happy Birthday Cutie! 🩷</h1>
+    <p>Aqsha! Agayi bandariya? 🐒</p>
+    <button onclick="enterSite()">Haan</button>
+    <button onclick="enterSite()">Yes</button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>🎊 Happy Birthday Aqsha! 🎊</h1>
+    <p>Meri pyaari dost, tu life ka asli mazza hai! ❤️</p>
+    <p>Tu Zeeshan ki best dost, aur duniya ki best bandar-girl hai fr! 😂</p>
+
+    <div class="cake"></div>
+
+    <p>💃 Aaj party nahi diya toh bhot marunga! 🔪</p>
+
+    <!-- Music Control -->
+    <div class="music-control">
+      <button onclick="toggleMusic()">⏯️ Play/Pause Music</button>
+    </div>
+  </div>
+</body>
+</html>
